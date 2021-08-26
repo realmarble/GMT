@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gamemaster's Toolbox</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <style>
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+ body {
+  overflow-y: visible; /* show vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.iframe-container {
+  overflow: hidden;
+  padding: 56.25%;
+  position: relative
+}
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+html {
+  /* font-size: 62.5%; */
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+}
+  </style>
+</head>
+<body>
+  <header class="header" id="navigation-menu">
+    <nav class="navbar">
+      <a href="javascript:void(0);" onclick="displaycontent('files/home.html');" class="nav-logo js-anchor-link">GM's Toolbox</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="displaycontent('files/home.html');" class="nav-link js-anchor-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="displaycontent('files/lootgen.html');" class="nav-link js-anchor-link">Loot Generator</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="displaycontent('files/researchcalc.html');" class="nav-link js-anchor-link">Research Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="displaycontent('files/costgen.html');" class="nav-link js-anchor-link">Price Generator</a>
+        </li>
+        <li class="nav-item">
+          <a href="javascript:void(0);" onclick="displaycontent('files/conditiongen.html');" class="nav-link js-anchor-link">Condition Generator</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<div id="wrapper">
+<div id="content">
+<div class="iframe-container">
+  <iframe id="content-iframe"
+    src="">
+</iframe>
+
+</div>
+</div>
+</div>
+<script>
+  function displaycontent(file) {
+    document.getElementById('content-iframe').src = file;
+    return ("iframe source changed to:" + file)
+  }
+  function schizowave() {
+    displaycontent("files/warp19.html")
+    return;
+  }
+</script>
+</body>
+</html>

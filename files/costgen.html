@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>generator kosztów</title>
+</head>
+<body>
+<label for="Rarity">Rarity:</label><br>
+<select id="Rarity" name="rarity">
+  <option value="common">Common</option>
+  <option value="uncommon">Uncommon</option>
+  <option value="rare">Rare</option>
+  <option value="very rare">Very rare</option>
+  <option value="sex">sex</option>
+</select>
+    <button id="start" onclick="pricegen()">Generuj</button>
+<div id="wynik"></div>
+<script>
+var wynikdiv = document.getElementById("wynik");
+function GetRandomInt(max) {
+  return Math.floor(Math.random() * max); }
+function pricegen() {
+  
+
+ rarity = document.getElementById('Rarity').value
+  rarity.toLowerCase();
+  switch(rarity) {
+    case "common":
+    minprice = 100;
+    totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+    wynikdiv.innerHTML = ("Cena:" + totalprice);
+    break;
+    case "uncommon":
+    minprice = 500;
+    totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+    wynikdiv.innerHTML = ("Cena:" + totalprice);   
+    break;
+    case "rare":
+    minprice = 5000;
+  totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+  wynikdiv.innerHTML = ("Cena:" + totalprice);
+    break;
+  case "very rare":
+  minprice = 50000;
+  totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+  wynikdiv.innerHTML = ("Cena:" + totalprice);
+    break;
+    case "sex":
+  wynikdiv.innerHTML = ("Pietrucha czy to ty?");
+    break;
+}}
+
+
+</script>
+</body>
+</html>

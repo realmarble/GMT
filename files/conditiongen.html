@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GM TOOLBOX</title>
+</head>
+<body>
+<button type="button" onclick="travelconditionroll();">Losuj Travel Condition</button>
+<div id="wynik"></div>
+<script>
+var wynikdiv = document.getElementById("wynik");
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+function random_item(items)
+{
+return items[Math.floor(Math.random()*items.length)];     
+}
+function travelconditionroll() {
+
+var modyfikator1 = getRandomInt(10);
+if (modyfikator1 < 5){modyfikator1 = -1;} 
+else
+{modyfikator1 = 1} 
+
+var modyfikator2 = getRandomInt(10);
+if (modyfikator2 < 5){modyfikator2 = -1;} 
+else
+{modyfikator2 = 1} 
+var modyfikator3 = getRandomInt(10);
+if (modyfikator3 < 5){modyfikator3 = -1;} 
+else
+{modyfikator3 = 1} 
+var modyfikator4 = getRandomInt(10);
+if (modyfikator4 < 5){modyfikator4 = -1;} 
+else
+{modyfikator4 = 1} 
+var result = modyfikator1 + modyfikator2 + modyfikator3 + modyfikator4;
+
+
+
+
+
+
+
+
+
+if (result == 0) {
+    var event = (random_item(["głód","zaraza","wojna","blokada","szaleństwo","przeklęta wiedza","przeklęty krąg magiczny","zmęczenie","śmierć","bogactwo","odpoczynek","jedzenie","pomoc","skrót","wiedza","pobojowisko","odnowa","krąg magii","antyk"]));
+    wynikdiv.innerHTML = ("Wydarzenie:" + event + ", Poziom:" + result);
+} 
+else if (result > 0){
+    var event = (random_item(["bogactwo","odpoczynek","jedzenie","pomoc","skrót","wiedza","pobojowisko","odnowa","krąg magii","antyk"]));
+    wynikdiv.innerHTML = ("Wydarzenie:" + event + ", Poziom:" + result);
+} else {
+    var event = (random_item(["głód","zaraza","wojna","blokada","szaleństwo","przeklęta wiedza","przeklęty krąg magiczny","zmęczenie","antyk","śmierć"]));
+    wynikdiv.innerHTML = ("Wydarzenie:" + event + ", Poziom:" + result);
+}
+}
+</script>
+</body>
+</html> 
