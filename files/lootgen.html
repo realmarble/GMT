@@ -66,13 +66,13 @@
 <button onclick="lootgen()">Generuj</button>
 <div id="result-list" style="max-width: 20ch;"></div>
 <script>
-var normalitems = [" dagger"," 2 daggery"," 1 bełt"," 3 bełty"," 5 bełtów"," 10 bełtów"," 1 strzała"," 3 strzały"," 5 strzał"," 10 strzał", " dagger"," 2 daggery"," 1 bełt"," 3 bełty"," 5 bełtów"," 10 bełtów"," 1 strzała"," 3 strzały"," 5 strzał"," 10 strzał"]
-var magiccommon = [" cast-off armor plate"," dread helm"," orb of direction"," orb of shielding (fire)"," orb of shielding (radiant)"," orb of shielding (poison and acid)"," orb of shielding (psychic)"," orb of shielding (lightining and thunder)"," orb of shielding (necrotic)"," orb of shielding (cold)"," orb of shielding (force)"]
-var magicuncommon = [" adamantine armor chainshirt"," amulet of drunkard"," boots of elvenkind"," cloak of elvenkind"," elemental gem"," headband of intellect"]
-var magicrare = [" bag of holding"," bag of beans"," cloak of bat"," bracer of flying daggers"," flame tongue greatsword"," ring of protection"]
-var magicveryrare = [" deck of many things"," rod of security"," living armor plate"]
-var resourcelist = [" kamień"," drewno"," metal"," proch strzelniczy"," kamień"," drewno"," metal"," proch strzelniczy"," kamień"," drewno"," metal"," proch strzelniczy"]
-var trashlist = [" patyki"," rozwalona zbroja"," zniszczona broń"," podarte ubrania"," patyki"," rozwalona zbroja"," zniszczona broń"," podarte ubrania"," patyki"," rozwalona zbroja"," zniszczona broń"," podarte ubrania"]
+var normalitems = ["_dagger","_2 daggery","_1 bełt","_3 bełty","_5 bełtów","_10 bełtów","_1 strzała"," 3_strzały","_5 strzał","_10 strzał", "_dagger","_2 daggery","_1 bełt","_3 bełty","_5 bełtów","_10 bełtów","_1 strzała","_3 strzały","_5 strzał","_10 strzał"]
+var magiccommon = ["_cast-off armor plate","_dread helm","_orb of direction","_orb of shielding (fire)","_orb of shielding (radiant)","_orb of shielding (poison and acid)","_orb of shielding (psychic)","_orb of shielding (lightining and thunder)","_orb of shielding (necrotic)","_orb of shielding (cold)","_orb of shielding (force)"]
+var magicuncommon = ["_adamantine armor chainshirt","_amulet of drunkard","_boots of elvenkind","_cloak of elvenkind","_elemental gem","_headband of intellect"]
+var magicrare = ["_bag of holding","_bag of beans","_cloak of bat","_bracer of flying daggers","_flame tongue greatsword","_ring of protection"]
+var magicveryrare = ["_deck of many things","_rod of security","_living armor plate"]
+var resourcelist = ["_kamień","_drewno","_metal","_proch strzelniczy","_kamień","_drewno","_metal","_proch strzelniczy","_kamień","_drewno","_metal","_proch strzelniczy"]
+var trashlist = ["_patyki","_rozwalona zbroja","_zniszczona broń","_podarte ubrania","_patyki","_rozwalona zbroja","_zniszczona broń","_podarte ubrania","_patyki","_rozwalona zbroja","_zniszczona broń","_podarte ubrania"]
 function sample(population, k){
     /*
         Chooses k unique random elements from a population sequence or set.
