@@ -138,6 +138,7 @@ function sample(population, k){
 }
 var wynikdiv = document.getElementById("result-list");
 function lootgen() {
+    wynikdiv.innerHTML = ("")
     var listfinal = [];
     
     var checknormalitem = document.getElementById("normal-items");
@@ -182,7 +183,11 @@ listfinal = listfinal + magicfinal;
       listfinal = listfinal + readytrash;
     } 
     console.log(listfinal);
-    wynikdiv.innerHTML = (listfinal);
+    _.forEach(listfinal, function(value) {
+ if (value == ' '){value = "<br>"}
+  else if (value == '_'){value = " "}
+ wynikdiv.innerHTML += (value)
+});
 }
 
 
