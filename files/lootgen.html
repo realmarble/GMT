@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>title</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
   <style>
-  .item {
-  width: -moz-fit-content;
-  width: fit-content;
-  }
+
   </style>
 </head>
 <body>
@@ -65,7 +64,7 @@
 
 
 <button onclick="lootgen()">Generuj</button>
-<div id="result-list" class="item"></div>
+<div id="result-list" style="max-width: 20ch;"></div>
 <script>
 var normalitems = [" dagger"," 2 daggery"," 1 bełt"," 3 bełty"," 5 bełtów"," 10 bełtów"," 1 strzała"," 3 strzały"," 5 strzał"," 10 strzał", " dagger"," 2 daggery"," 1 bełt"," 3 bełty"," 5 bełtów"," 10 bełtów"," 1 strzała"," 3 strzały"," 5 strzał"," 10 strzał"]
 var magiccommon = [" cast-off armor plate"," dread helm"," orb of direction"," orb of shielding (fire)"," orb of shielding (radiant)"," orb of shielding (poison and acid)"," orb of shielding (psychic)"," orb of shielding (lightining and thunder)"," orb of shielding (necrotic)"," orb of shielding (cold)"," orb of shielding (force)"]
@@ -183,11 +182,14 @@ listfinal = listfinal + magicfinal;
       listfinal = listfinal + readytrash;
     } 
     console.log(listfinal);
-    display = listfinal.toString();
-    wynikdiv.innerHTML = (display)
-    
-    
+    wynikdiv.innerHTML = (listfinal);
 }
+
+
+
+    
+    
+
 </script>
 </body>
 </html>
