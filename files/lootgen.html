@@ -185,7 +185,8 @@ listfinal = listfinal + magicfinal;
     console.log(listfinal);
     _.forEach(listfinal, function(value) {
  if (value == ' '){value = "<br>"}
-  else if (value == '_'){value = " "}
+ if (value == '_'){value = " "}
+ if (value == ','){value = ""}
  wynikdiv.innerHTML += (value)
 });
 }
