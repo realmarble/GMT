@@ -2,55 +2,158 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>generator kosztów</title>
+  <title>Gamemaster's Toolbox</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <style>
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+ body {
+  overflow-y: visible; /* show vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.iframe-container {
+  overflow: hidden;
+  padding: 56.25%;
+  position: relative
+}
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+html {
+  /* font-size: 62.5%; */
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+}
+  </style>
 </head>
 <body>
-<label for="Rarity">Rarity:</label><br>
-<select id="Rarity" name="rarity">
-  <option value="common">Common</option>
-  <option value="uncommon">Uncommon</option>
-  <option value="rare">Rare</option>
-  <option value="very rare">Very rare</option>
-  <option value="sex">sex</option>
-</select>
-    <button id="start" onclick="pricegen()">Generuj</button>
-<div id="wynik"></div>
-<script>
-var wynikdiv = document.getElementById("wynik");
-function GetRandomInt(max) {
-  return Math.floor(Math.random() * max); }
-function pricegen() {
+  <header class="header" id="navigation-menu">
+    <nav class="navbar">
+      <a href="../menu.html"  class="nav-logo js-anchor-link">GM's Toolbox</a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../menu.html"  class="nav-link js-anchor-link">Home</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  <label for="Rarity">Rarity:</label><br>
+  <select id="Rarity" name="rarity">
+    <option value="common">Common</option>
+    <option value="uncommon">Uncommon</option>
+    <option value="rare">Rare</option>
+    <option value="very rare">Very rare</option>
+    <option value="sex">sex</option>
+  </select>
+      <button id="start" onclick="pricegen()">Generuj</button>
+  <div id="wynik"></div>
+  <script>
+  var wynikdiv = document.getElementById("wynik");
+  function GetRandomInt(max) {
+    return Math.floor(Math.random() * max); }
+  function pricegen() {
+    
   
-
- rarity = document.getElementById('Rarity').value
-  rarity.toLowerCase();
-  switch(rarity) {
-    case "common":
-    minprice = 100;
+   rarity = document.getElementById('Rarity').value
+    rarity.toLowerCase();
+    switch(rarity) {
+      case "common":
+      minprice = 100;
+      totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+      wynikdiv.innerHTML = ("Cena:" + totalprice);
+      break;
+      case "uncommon":
+      minprice = 500;
+      totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
+      wynikdiv.innerHTML = ("Cena:" + totalprice);   
+      break;
+      case "rare":
+      minprice = 5000;
     totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
     wynikdiv.innerHTML = ("Cena:" + totalprice);
-    break;
-    case "uncommon":
-    minprice = 500;
+      break;
+    case "very rare":
+    minprice = 50000;
     totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
-    wynikdiv.innerHTML = ("Cena:" + totalprice);   
-    break;
-    case "rare":
-    minprice = 5000;
-  totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
-  wynikdiv.innerHTML = ("Cena:" + totalprice);
-    break;
-  case "very rare":
-  minprice = 50000;
-  totalprice = GetRandomInt(minprice + (minprice * 2)) + minprice;
-  wynikdiv.innerHTML = ("Cena:" + totalprice);
-    break;
-    case "sex":
-  wynikdiv.innerHTML = ("Pietrucha czy to ty?");
-    break;
-}}
-
-
-</script>
+    wynikdiv.innerHTML = ("Cena:" + totalprice);
+      break;
+      case "sex":
+    wynikdiv.innerHTML = ("Pietrucha czy to ty?");
+      break;
+  }}
+  
+  
+  </script>
 </body>
 </html>
+
+
+
+
+

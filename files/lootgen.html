@@ -2,14 +2,109 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>title</title>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-
+  <title>Gamemaster's Toolbox</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
   <style>
+ @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+ body {
+  overflow-y: visible; /* show vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.iframe-container {
+  overflow: hidden;
+  padding: 56.25%;
+  position: relative
+}
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+html {
+  /* font-size: 62.5%; */
+  font-family: "Roboto", sans-serif;
+}
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #482ff7;
+}
   </style>
 </head>
 <body>
+  <header class="header" id="navigation-menu">
+    <nav class="navbar">
+        <a href="../menu.html"  class="nav-logo js-anchor-link">GM's Toolbox</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../menu.html"  class="nav-link js-anchor-link">Home</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+
+
 
     <div style="width: 100%;">
         <div style="width: 50%; height: 150px; float: left;"> 
@@ -29,7 +124,7 @@
                 <input type="checkbox" id="common-magic-items" name="common-magic-items">
                 <label for="common-magic-items">Common Items</label><br>
                 <input type="checkbox" id="uncommon-magic-items" name="uncommon-magic-items">
-                <label for="uncommon-magic-items">Uncommon Items</label><br>
+                <label for="uncommon-magic-items">uncommon Items</label><br>
                 <input type="checkbox" id="rare-magic-items" name="rare-magic-items">
                 <label for="rare-magic-items">Rare Items</label><br>
                 <input type="checkbox" id="very-rare-magic-items" name="very-rare-magic-items">
@@ -52,7 +147,7 @@
             <div style="margin-left: 50%; height: 100px;"> 
                 <div id="trash">
                     <input type="checkbox" id="trash" name="trash">
-                    <label for="trash">Trash</label><br>
+                    <label for="trash">trash</label><br>
                     <label for="trash-amount">Amount of Resources</label>
                 <input type="number" id="trash-amount" name="trash-amount" min="1" max="10">
                 </div>
@@ -64,15 +159,15 @@
 
 
 <button onclick="lootgen()">Generuj</button>
-<div id="result-list" style="max-width: 20ch;"></div>
+<div id="result-list"></div>
 <script>
-var normalitems = [" dagger"," 2_daggery"," 1_bełt"," 3_bełty"," 5_bełtów"," 10_bełtów"," 1_strzała"," 3_strzały"," 5_strzał"," 10_strzał", " dagger"," 2_daggery"," 1_bełt"," 3_bełty"," 5_bełtów"," 10_bełtów"," 1_strzała"," 3_strzały"," 5_strzał"," 10_strzał"]
-var magiccommon = [" cast-off_armor_plate"," dread_helm"," orb_of_direction"," orb_of_shielding_(fire)"," orb_of_shielding_(radiant)"," orb_of_shielding_(poison and acid)"," orb_of_shielding_(psychic)"," orb_of_shielding_(lightining and thunder)"," orb_of_shielding_(necrotic)"," orb_of_shielding_(cold)"," orb_of_shielding_(force)"]
-var magicuncommon = [" adamantine_armor_chainshirt"," amulet_of_drunkard"," boots_of_elvenkind"," cloak_of_elvenkind"," elemental_gem"," headband_of_intellect"]
-var magicrare = [" bag_of_holding"," bag_of_beans"," cloak_of_bat"," bracer_of_flying_daggers"," flame_tongue_greatsword"," ring_of_protection"]
-var magicveryrare = [" deck_of_many_things"," rod_of_security"," living_armor_plate"]
-var resourcelist = [" kamień"," drewno"," metal"," proch_strzelniczy"," kamień"," drewno"," metal"," proch_strzelniczy"," kamień"," drewno"," metal"," proch_strzelniczy"]
-var trashlist = [" patyki"," rozwalona_zbroja"," zniszczona_broń"," podarte_ubrania"," patyki"," rozwalona_zbroja"," zniszczona_broń"," podarte_ubrania"," patyki"," rozwalona_zbroja"," zniszczona_broń"," podarte_ubrania"]
+var normalitems = ["dagger","2 daggery","1 bełt","3 bełty","5 bełtów","10 bełtów","1 strzała","3 strzały","5 strzał","10 strzał", "dagger","2 daggery","1 bełt","3 bełty","5 bełtów","10 bełtów","1 strzała","3 strzały","5 strzał","10 strzał"]
+var magiccommon = ["cast-off armor plate","dread helm","orb of direction","orb of shielding (fire)","orb of shielding (radiant)","orb of shielding (poison and acid)","orb of shielding (psychic)","orb of shielding (lightining and thunder)","orb of shielding (necrotic)","orb of shielding (cold)","orb of shielding (force)"]
+var magicuncommon = ["adamantine armor chainshirt","amulet of drunkard","boots of elvenkind","cloak of elvenkind","elemental gem","headband of intelect"]
+var magicrare = ["bag of holding","bag of beans","cloak of bat","bracer of flying daggers","flame tongue greatsword","ring of protection"]
+var magicveryrare = ["deck of many things","rod of security","living armor plate"]
+var resourcelist = ["kamień","drewno","metal","proch strzelniczy","kamień","drewno","metal","proch strzelniczy","kamień","drewno","metal","proch strzelniczy"]
+var trashlist = ["patyki","rozwalona zbroja","zniszczona broń","podarte ubrania","patyki","rozwalona zbroja","zniszczona broń","podarte ubrania","patyki","rozwalona zbroja","zniszczona broń","podarte ubrania"]
 function sample(population, k){
     /*
         Chooses k unique random elements from a population sequence or set.
@@ -138,7 +233,6 @@ function sample(population, k){
 }
 var wynikdiv = document.getElementById("result-list");
 function lootgen() {
-    wynikdiv.innerHTML = ("")
     var listfinal = [];
     
     var checknormalitem = document.getElementById("normal-items");
@@ -183,19 +277,11 @@ listfinal = listfinal + magicfinal;
       listfinal = listfinal + readytrash;
     } 
     console.log(listfinal);
-    _.forEach(listfinal, function(value) {
- if (value == ' '){value = "<br>"}
- if (value == '_'){value = " "}
- if (value == ','){value = ""}
- wynikdiv.innerHTML += (value)
-});
+    display = listfinal.toString();
+    wynikdiv.innerHTML = (display)
+    
+    
 }
-
-
-
-    
-    
-
 </script>
 </body>
 </html>

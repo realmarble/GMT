@@ -17,25 +17,45 @@ function random_item(items)
 return items[Math.floor(Math.random()*items.length)];     
 }
 function travelconditionroll() {
+resultarray = []
+function evaluate(modyfikator) {
+  if (modyfikator == 1) {
+  resultarray.push(-1);
+  while (getRandomInt(10) < 6) {
+  resultarray.push(1);
+}
+  
+} else if (modyfikator == 10) {
+  resultarray.push(1);
+while (getRandomInt(10) > 5) {
+  resultarray.push(1);
+}
+
+
+} else if (modyfikator > 5){
+  resultarray.push(1);
+} else {
+  resultarray.push(-1);
+}  
+}
 
 var modyfikator1 = getRandomInt(10);
-if (modyfikator1 < 5){modyfikator1 = -1;} 
-else
-{modyfikator1 = 1} 
-
 var modyfikator2 = getRandomInt(10);
-if (modyfikator2 < 5){modyfikator2 = -1;} 
-else
-{modyfikator2 = 1} 
 var modyfikator3 = getRandomInt(10);
-if (modyfikator3 < 5){modyfikator3 = -1;} 
-else
-{modyfikator3 = 1} 
 var modyfikator4 = getRandomInt(10);
-if (modyfikator4 < 5){modyfikator4 = -1;} 
-else
-{modyfikator4 = 1} 
-var result = modyfikator1 + modyfikator2 + modyfikator3 + modyfikator4;
+evaluate(modyfikator1);
+evaluate(modyfikator2);
+evaluate(modyfikator3);
+evaluate(modyfikator4);
+const reducer = (accumulator, curr) => accumulator + curr;
+
+
+
+
+
+
+
+var result = resultarray.reduce(reducer)
 
 
 

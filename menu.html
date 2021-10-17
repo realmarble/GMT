@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-
+<link rel="manifest" href="/site.webmanifest">
   <style>
  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
  body {
@@ -30,8 +30,6 @@
   left: 0;
   top: 0;
   position: absolute;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 html {
   /* font-size: 62.5%; */
@@ -96,45 +94,30 @@ a {
 <body>
   <header class="header" id="navigation-menu">
     <nav class="navbar">
-      <a href="javascript:void(0);" onclick="displaycontent('files/home.html');" class="nav-logo js-anchor-link">GM's Toolbox</a>
+      <a href="files/home.html"  class="nav-logo js-anchor-link">GM's Toolbox</a>
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="javascript:void(0);" onclick="displaycontent('files/home.html');" class="nav-link js-anchor-link">Home</a>
+          <a href="files/home.html"  class="nav-link js-anchor-link">Home</a>
         </li>
         <li class="nav-item">
-          <a href="javascript:void(0);" onclick="displaycontent('files/lootgen.html');" class="nav-link js-anchor-link">Loot Generator</a>
+          <a href="files/lootgen.html" class="nav-link js-anchor-link">Loot Generator</a>
         </li>
         <li class="nav-item">
-          <a href="javascript:void(0);" onclick="displaycontent('files/researchcalc.html');" class="nav-link js-anchor-link">Research Calculator</a>
+          <a href="files/researchcalc.html" class="nav-link js-anchor-link">Research Calculator</a>
         </li>
         <li class="nav-item">
-          <a href="javascript:void(0);" onclick="displaycontent('files/costgen.html');" class="nav-link js-anchor-link">Price Generator</a>
+          <a href="files/costgen.html" class="nav-link js-anchor-link">Price Generator</a>
         </li>
         <li class="nav-item">
-          <a href="javascript:void(0);" onclick="displaycontent('files/conditiongen.html');" class="nav-link js-anchor-link">Condition Generator</a>
+          <a href="files/conditiongen.html" class="nav-link js-anchor-link">Condition Generator</a>
+        </li>
+        <li class="nav-item">
+          <a href="files/notes.html" class="nav-link js-anchor-link">Notes</a>
         </li>
       </ul>
     </nav>
   </header>
-<div id="wrapper">
-<div id="content">
-<div class="iframe-container">
-  <iframe id="content-iframe"
-    src="">
-</iframe>
+  
 
-</div>
-</div>
-</div>
-<script>
-  function displaycontent(file) {
-    document.getElementById('content-iframe').src = file;
-    return ("iframe source changed to:" + file)
-  }
-  function schizowave() {
-    displaycontent("files/warp19.html")
-    return;
-  }
-</script>
 </body>
 </html>
