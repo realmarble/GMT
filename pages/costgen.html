@@ -1,20 +1,24 @@
 <template>
   <div class="container template" id="costgen-template" data-tab="costgen">
-
-
-    
-    <label for="Rarity">Rarity:</label>
-    <select id="Rarity" name="rarity">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="Rarity">Rarity:</label>
+    <select class="custom-select" id="Rarity" name="rarity">
       <option value="common">Common</option>
       <option value="uncommon">Uncommon</option>
       <option value="rare">Rare</option>
       <option value="very rare">Very rare</option>
     </select>
-    <button id="start" onclick="pricegen()">Generuj</button>
-    <div id="costgenwynik"></div>
     
-    <script>
-    var wynikdiv = document.getElementById("costgenwynik");
+  </div>
+</div>
+<button class="btn btn-secondary btn-lg mt-4" id="start" onclick="pricegen()">Generuj</button>
+    <span></span>
+    
+    
+    <script id="costgenscript">
+       parentdiv = document.getElementById("costgenscript").parentElement
+    var wynikdiv = parentdiv.getElementsByTagName('span')[0]
     function GetRandomInt(max) {
       return Math.floor(Math.random() * max); }
     function pricegen() {

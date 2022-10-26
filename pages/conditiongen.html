@@ -3,12 +3,15 @@
     class="container template"
     id="conditiongen-template"
     data-tab="conditiongen">
-    <button type="button" onclick="travelconditionroll();">
+    <div class="jumbotron text-center">
+    <button class="btn btn-secondary btn-lg mt-4" type="button" onclick="travelconditionroll();">
       Losuj Travel Condition
-    </button>
-    <div id="conditiongenwynik"></div>
-    <script>
-      var wynikdiv = document.getElementById("conditiongenwynik");
+    </button><br>
+    <span></span>
+  </div>
+    <script id="conditiongenscript">
+      parentdiv = document.getElementById("conditiongenscript").parentElement
+      var targetdiv = parentdiv.getElementsByTagName('span')[0]
       function getRandomInt(max) {
         return Math.floor(Math.random() * max);
       }
@@ -69,7 +72,7 @@
             "krąg magii",
             "antyk",
           ]);
-          wynikdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
+          targetdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
         } else if (result > 0) {
           var event = random_item([
             "bogactwo",
@@ -83,7 +86,7 @@
             "krąg magii",
             "antyk",
           ]);
-          wynikdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
+          targetdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
         } else {
           var event = random_item([
             "głód",
@@ -97,7 +100,7 @@
             "antyk",
             "śmierć",
           ]);
-          wynikdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
+          targetdiv.innerHTML = "Wydarzenie:" + event + ", Poziom:" + result;
         }
       }
     </script>

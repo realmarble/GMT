@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <title>Game Master's Tools</title>
     <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cyborg/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/cyborg/bootstrap.min.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="import" href="pages/main.html">
     <link rel="import" href="pages/conditiongen.html">
     <link rel="import" href="pages/costgen.html">
+    <link rel="import" href="pages/lootgen.html">
     <style>
         .nav-pills>a.active {
             background-color: #f30bf3 !important;
@@ -33,6 +36,7 @@
                     <a class="nav-link active" id="main-tab" data-toggle="pill" href="#main" role="tab" aria-controls="main" aria-selected="true">Main</a>
                     <a class="nav-link" id="conditiongen-tab" data-toggle="pill" href="#conditiongen" role="tab" aria-controls="contact" aria-selected="false">Condition Generator</a>
                     <a class="nav-link" id="costgen-tab" data-toggle="pill" href="#costgen" role="tab" aria-controls="contact" aria-selected="false">Cost Generator</a>                
+                    <a class="nav-link" id="lootgen-tab" data-toggle="pill" href="#lootgen" role="tab" aria-controls="contact" aria-selected="false">Loot Generator</a>                
                 </div>
             </div>
             <div class="col-10">
@@ -40,6 +44,7 @@
                     <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab"></div>
                     <div class="tab-pane fade" id="conditiongen" role="tabpanel" ></div>
                     <div class="tab-pane fade" id="costgen" role="tabpanel" ></div>
+                    <div class="tab-pane fade" id="lootgen" role="tabpanel" ></div>
                 </div>
             </div>
         </div>
