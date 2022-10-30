@@ -2,58 +2,88 @@
   <div class="container template" id="lootgen-template" data-tab="lootgen">
 
 <div style="width: 100%;">
-        <div style="width: 50%; height: 150px; float: left;"> 
-            <div id="normal-items-div">
-                <input type="checkbox" id="normal-items" name="normal-items">
-            <label for="normal-items">Normal Items</label><br>
-            
-            <label for="normal-items-amount">Amount of Normal Items</label>
-            <input type="number" id="normal-items-amount" name="normal-items-amount"
-                   min="1" max="10">
-            </div>  
-        </div>
-        <div style="margin-left: 50%; height: 150px;"> 
-            <div id="magic-items-div">
-                <input type="checkbox" id="magic-items" name="magic-items">
-                <label for="magic-items">Magic Items</label><br>
-                <input type="checkbox" id="common-magic-items" name="common-magic-items">
-                <label for="common-magic-items">Common Items</label><br>
-                <input type="checkbox" id="uncommon-magic-items" name="uncommon-magic-items">
-                <label for="uncommon-magic-items">uncommon Items</label><br>
-                <input type="checkbox" id="rare-magic-items" name="rare-magic-items">
-                <label for="rare-magic-items">Rare Items</label><br>
-                <input type="checkbox" id="very-rare-magic-items" name="very-rare-magic-items">
-                <label for="very-rare-magic-items">Very Rare Items</label><br>
-                <label for="magic-items-amount">Amount of Magic Items</label>
-            <input type="number" id="magic-items-amount" name="magic-items-amount"
-                   min="1" max="10">
-            
-            </div>
-        </div>
-        </div>
-        <div style="width: 100%;">
-            <div style="width: 50%; height: 100px; float: left; "> 
-                <input type="checkbox" id="resources" name="resources">
-                <label for="resources">Resources</label><br>
-                <label for="resources-amount">Amount of Resources</label>
-            <input type="number" id="resources-items-amount" name="resources-items-amount"
-                   min="1" max="10">
-            </div>
-            <div style="margin-left: 50%; height: 100px;"> 
-                <div id="trash">
-                    <input type="checkbox" id="trash" name="trash">
-                    <label for="trash">trash</label><br>
-                    <label for="trash-amount">Amount of Trash</label>
-                <input type="number" id="trash-amount" name="trash-amount" min="1" max="10">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="normal-items-div">
+                    Normal Items
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                          <input class="form-check-input mt-0" type="checkbox"  id="normal-items" value="" aria-label="Checkbox for following text input">
+                        </div>
+                        <input type="number" class="form-control" aria-label="Text input with checkbox"  min="1" max="10" id="normal-items-amount" name="normal-items-amount" >
+                      </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                Resources
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox"  id="resources" name="resources" value="" aria-label="Checkbox for following text input">
+                    </div>
+                    <input type="number" class="form-control" aria-label="Text input with checkbox"  min="1" max="10" id="resources-items-amount" name="resources-items-amount" >
+                  </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                Trash
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox"  id="trash" name="trash" value="" aria-label="Checkbox for following text input">
+                    </div>
+                    <input type="number" class="form-control" aria-label="Text input with checkbox"  min="1" max="10" id="trash-amount" name="trash-amount" >
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div id="magic-items-div">
+                    Magic Items
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                          <input class="form-check-input mt-0" type="checkbox"  id="magic-items" name="resources" value="" aria-label="Checkbox for following text input">
+                        </div>
+                        <input type="number" class="form-control" aria-label="Text input with checkbox"  min="1" max="10" id="magic-items-amount" name="magic-items-amount" >
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="common-magic-items" name="common-magic-items" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Common Items
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="uncommon-magic-items" name="uncommon-magic-items" name="uncommon-magic-items" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                          Uncommon Items
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rare-magic-items" name="rare-magic-items" name="rare-magic-items" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Rare Items
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="very-rare-magic-items" name="very-rare-magic-items" name="very-rare-magic-items" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                             Very Rare Items
+                        </label>
+                      </div>
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+            
+          
 
 
 
 
 
-<button onclick="lootgen()">Generuj</button>
+
+<button class="btn btn-primary" onclick="lootgen()">Generuj</button>
 <span></span>
 <script id="lootgenscript">
 var normalitems = ["dagger","2 daggery","1 bełt","3 bełty","5 bełtów","10 bełtów","1 strzała","3 strzały","5 strzał","10 strzał", "dagger","2 daggery","1 bełt","3 bełty","5 bełtów","10 bełtów","1 strzała","3 strzały","5 strzał","10 strzał"]

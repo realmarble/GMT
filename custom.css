@@ -16,7 +16,7 @@
   text-decoration: overline;
 }
 .nav-pills>a.active {
-  background-color: #f30bf3 !important;
+  background-color: #007BFF !important;
   color: #ffffff !important;
 }
 
